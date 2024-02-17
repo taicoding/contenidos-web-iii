@@ -24,10 +24,10 @@
 2. Introducción a la Programación Web Back-end
    1. ¿Qué es el Back-end?
    2. Principios de desarrollo
-     1. DRY
-     2. KISS
-     3. YAGNI
-     4. SOLID
+      1. DRY
+      2. KISS
+      3. YAGNI
+      4. SOLID
    3. Patrones de Diseño
       1. MVC
       2. Singleton
