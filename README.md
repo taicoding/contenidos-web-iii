@@ -64,8 +64,8 @@
   9. Operaciones CRUD (Crear, Leer, Actualizar, Eliminar)
   10. Autenticación y Autorización
   11. Sesiones
-     1. Cookies
-     2. JWT (JSON Web Token)
-     3. OAuth
+      1.  Cookies
+      2.  JWT (JSON Web Token)
+      3.  OAuth
   12. Documentación de APIs
-     1. OpenAPI
+      1.  OpenAPI
