@@ -69,3 +69,23 @@
       3.  OAuth
   12. Documentación de APIs
       1.  OpenAPI
+### Unidad Didáctica 4: Frameworks
+
+**Contenido:**
+4. Introducción a los Frameworks
+   1. ¿Qué es un Framework?
+   2. Configuración de una proyecto con un Framework
+   3. Pruebas Unitarias
+      1. Introducción
+      2. Importancia y Beneficios
+      3. Desarrollo e Implementación
+      4. Tipos  de Pruebas Unitarias
+         1. Pruebas Automatizadas
+         2. Pruebas Manuales
+   4. Estrategias de Despliegue
+      1. Despliegue en entornos de desarrollo
+      2. Despliegue en entornos de producción
+      5. Despliegue en plataforma como servicio (PaaS)
+      6. Despliegue con contenedores
+      7. Integración continua
+      8. Despliegue continuo
