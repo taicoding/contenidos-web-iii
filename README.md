@@ -89,3 +89,14 @@
       6. Despliegue con contenedores
       7. Integración continua
       8. Despliegue continuo
+
+Bibliografia:
+- "Clean Code: A Handbook of Agile Software Craftsmanship" by Robert C. Martin
+- "Design Patterns: Elements of Reusable Object-Oriented Software" by Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- "Sumergete en los patrones de diseño" by Alexander Shvets
+- "RESTful Web Services" by Leonard Richardson, Sam Ruby
+- "OAuth 2.0: Simplify API Authorization with OAuth 2.0" by Aaron Parecki
+- "HTTP: The Definitive Guide" by David Gourley, Brian Totty, Marjorie Sayer, Anshu Aggarwal
+- "Learning GraphQL: Declarative Data Fetching for Modern Web Apps" by Eve Porcello, Alex Banks
+- "The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations" by Gene Kim, Patrick Debois, John Willis, and Jez Humble
+- "Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation" by Jez Humble, David Farley
