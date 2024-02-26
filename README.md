@@ -10,8 +10,9 @@
    2. Arquitectura Cliente-Servidor
    3. Protocolos de Comunicación en la Web
    4. Protocolo HTTP y HTTPS
-   5. Web Tradicional vs Web Moderna
-   6. Web Services
+2. Tendencias de la Web
+   1. Web Tradicional vs Web Moderna
+3. Web Services
       1. Configuración del Setup
       2. Git y GitHub
       3. ¿Qué es un Web Service?
@@ -19,7 +20,7 @@
       4. Tipos de Web Services
             1. SOAP (Simple Object Access Protocol)
             2. REST (Representational State Transfer)
-   7. Introducción a las APIs
+4. Introducción a las APIs
       1. GraphQL
       2. RESTful
 ### Unidad Didáctica 2: Programación Web 
