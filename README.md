@@ -87,6 +87,13 @@
       4. Despliegue con contenedores
       5. Integración continua
       6. Despliegue continuo
+   
+## Evaluación
+- Primer Parcial = 25 pts
+- Segundo Parcial = 25 pts
+- Examen Final = 35 pts
+- Practicas = 10 pts
+- Participación = 5 pts
 
 ## Bibliografia:
 - Blé Jurado, C. (2023). Diseño Ágil con TDD: Una introducción práctica a las pruebas de software automatizadas.  Savvily Editorial S.L.U
