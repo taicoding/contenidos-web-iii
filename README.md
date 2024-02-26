@@ -11,29 +11,31 @@
    4. Protocolo HTTP y HTTPS
    5. Web Tradicional vs Web Moderna
    6. Web Services
-      1. ¿Qué es un Web Service?
-      2. Tipos de Web Services
+      1. Configuración del Setup
+      2. Git y GitHub
+      3. ¿Qué es un Web Service?
+         1. Mi primer Web Server
+      4. Tipos de Web Services
             1. SOAP (Simple Object Access Protocol)
             2. REST (Representational State Transfer)
-      3. Introducción a las APIs
-         1. GraphQL
-         2. RESTful
+   7. Introducción a las APIs
+      1. GraphQL
+      2. RESTful
 ### Unidad Didáctica 2: Programación Web 
 
 **Contenido:**
 2. Introducción a la Programación Web Back-end
-   1. ¿Qué es el Back-end?
-   2. Principios de desarrollo
+   1. Principios de desarrollo
       1. DRY
       2. KISS
       3. YAGNI
       4. SOLID
-   3. Patrones de Diseño
+   2. Patrones de Diseño
       1. MVC
       2. Singleton
       3. Factory
       4. Builder
-   4. Arquitecturas Web
+   3. Arquitecturas Web
       1. Monolítica
       2. MVC
       3. Microservicios
