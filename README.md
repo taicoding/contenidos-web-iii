@@ -1,4 +1,5 @@
-# Programación Web III
+# Programación Web III - INF 133
+**Docente: Lic. Tatiana Delgadillo**
 
 ### Unidad Didáctica 1: Introducción al Desarrollo de Aplicaciones Web
 
@@ -86,7 +87,7 @@
       5. Integración continua
       6. Despliegue continuo
 
-Bibliografia:
+## Bibliografia:
 - Blé Jurado, C. (2023). Diseño Ágil con TDD: Una introducción práctica a las pruebas de software automatizadas.  Savvily Editorial S.L.U
 - Blé Jurado, C. (2022). Código sostenible: Cómo programar código fácil de mantener. Editorial Canal de Distribución.
 - Newman, S. (2021). Building Microservices, 2nd Edition. O'Reilly Media
