@@ -20,9 +20,12 @@
       4. Tipos de Web Services
             1. SOAP (Simple Object Access Protocol)
             2. REST (Representational State Transfer)
+               1. Métodos HTTP
+               2. Status Codes
 4. Introducción a las APIs
       1. GraphQL
       2. RESTful
+
 ### Unidad Didáctica 2: Programación Web 
 
 **Contenido:**
