@@ -1,21 +1,32 @@
+# Importamos la biblioteca requests para hacer peticiones HTTP
 import requests
-url = "http://localhost:8000/"
+
+# Definimos la URL del servicio al que vamos a hacer la petición
+url = "http://localhost:8000/delivery"
+
+# Definimos los encabezados HTTP que vamos a enviar con la petición
 headers = {"Content-Type": "application/json"}
 
-package = {"weight": 2, "destination": "123 Calle Principal"}
+# Definimos el tipo de vehículo como "motorcycle"
 vehicle_type = "motorcycle"
-data = {"vehicle_type": vehicle_type, "package": package}
+data = {"vehicle_type": vehicle_type}
+
+# Hacemos una petición POST a la URL con los datos y encabezados definidos
 response = requests.post(url, json=data, headers=headers)
+
 if response.status_code == 200:
-    print("Delivery successfully scheduled.")
+    print(response.text)
 else:
     print("Error scheduling delivery:", response.text)
-    
-package = {"weight": 0.5, "destination": "456 Calle Secundaria"}
+
+# Cambiamos el tipo de vehículo a "drone"
 vehicle_type = "drone"
-data = {"vehicle_type": vehicle_type, "package": package}
+data = {"vehicle_type": vehicle_type}
+
+# Hacemos otra petición POST a la URL con los nuevos datos y los mismos encabezados
 response = requests.post(url, json=data, headers=headers)
+
 if response.status_code == 200:
-    print("Delivery successfully scheduled.")
+    print(response.text)
 else:
     print("Error scheduling delivery:", response.text)
