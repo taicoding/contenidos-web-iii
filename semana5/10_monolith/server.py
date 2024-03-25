@@ -38,12 +38,12 @@ class BlogHandler(BaseHTTPRequestHandler):
     def do_POST(self):
         content_length = int(self.headers["Content-Length"])
         post_data = self.rfile.read(content_length)
-        post_params = parse_qs(post_data.decode())
+        data = json.loads(post_data.decode('utf-8'))
 
         # Crear una nueva publicación
         if self.path == "/posts":
-            title = post_params.get("title", [""])[0]
-            content = post_params.get("content", [""])[0]
+            title = data.get("title", "")
+            content = data.get("content", "")
             new_post_id = max(db.keys()) + 1
             db[new_post_id] = {"title": title, "content": content}
             self.send_response(201)
@@ -55,16 +55,16 @@ class BlogHandler(BaseHTTPRequestHandler):
 
     def do_PUT(self):
         # Actualizar una publicación existente
-        if self.path.startswith("/post/"):
+        if self.path.startswith("/posts/"):
             post_id = int(self.path.split("/")[-1])
             if post_id in db:
                 content_length = int(self.headers["Content-Length"])
                 post_data = self.rfile.read(content_length)
-                post_params = parse_qs(post_data.decode())
-                db[post_id]["title"] = post_params.get("title", [db[post_id]["title"]])[
+                data = json.loads(post_data.decode('utf-8'))
+                db[post_id]["title"] = data.get("title", [db[post_id]["title"]])[
                     0
                 ]
-                db[post_id]["content"] = post_params.get(
+                db[post_id]["content"] = data.get(
                     "content", [db[post_id]["content"]]
                 )[0]
                 self.send_response(200)
@@ -78,7 +78,7 @@ class BlogHandler(BaseHTTPRequestHandler):
 
     def do_DELETE(self):
         # Eliminar una publicación existente
-        if self.path.startswith("/post/"):
+        if self.path.startswith("/posts/"):
             post_id = int(self.path.split("/")[-1])
             if post_id in db:
                 del db[post_id]
