@@ -66,12 +66,12 @@ class PizzaService:
     def read_pizzas(self):
         return {index: pizza.__dict__ for index, pizza in pizzas.items()}
 
-    def update_pizza(self, index, post_data):
+    def update_pizza(self, index, data):
         if index in pizzas:
             pizza = pizzas[index]
-            tamaño = post_data.get("tamaño", None)
-            masa = post_data.get("masa", None)
-            toppings = post_data.get("toppings", [])
+            tamaño = data.get("tamaño", None)
+            masa = data.get("masa", None)
+            toppings = data.get("toppings", [])
 
             if tamaño:
                 pizza.tamaño = tamaño
