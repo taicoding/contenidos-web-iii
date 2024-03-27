@@ -84,7 +84,7 @@ class PizzaHandler(BaseHTTPRequestHandler):
             data = HTTPDataHandler.handle_reader(self)
             response_data = self.controller.handle_post_request(data)
             
-            HTTPDataHandler.handle_response(self, 200, response_data)
+            HTTPDataHandler.handle_response(self, 201, response_data)
         else:
             HTTPDataHandler.handle_response(self, 404, {"Error": "Ruta no existente"})
 

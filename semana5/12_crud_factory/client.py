@@ -7,11 +7,20 @@ headers = {"Content-Type": "application/json"}
 # POST /deliveries
 new_vehicle_data = {
     "vehicle_type": "drone",
-    "plate_number": "ABC123",
+    "plate_number": "ABC-123",
     "capacity": 10
 }
 response = requests.post(url=url, json=new_vehicle_data, headers=headers)
 print(response.json())
+
+new_vehicle_data = {
+    "vehicle_type": "motorcycle",
+    "plate_number": "ZTE-204",
+    "capacity": 25
+}
+response = requests.post(url=url, json=new_vehicle_data, headers=headers)
+print(response.json())
+
 
 # GET /deliveries
 response = requests.get(url=url)

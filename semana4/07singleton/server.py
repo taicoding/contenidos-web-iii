@@ -35,7 +35,7 @@ class PlayerHandler(BaseHTTPRequestHandler):
             post_data = self.rfile.read(content_length)
             damage = json.loads(post_data.decode("utf-8"))["damage"]
             player.take_damage(damage)
-            self.send_response(200)
+            self.send_response(201)
             self.end_headers()
             player_data = json.dumps(player.to_dict())
             self.wfile.write(player_data.encode("utf-8"))

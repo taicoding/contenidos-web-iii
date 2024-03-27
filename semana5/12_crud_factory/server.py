@@ -14,12 +14,12 @@ class DeliveryVehicle:
 
 class Motorcycle(DeliveryVehicle):
     def __init__(self, plate_number, capacity):
-        super().__init__("drone", plate_number, capacity)
+        super().__init__("motorcycle", plate_number, capacity)
 
 
 class Drone(DeliveryVehicle):
     def __init__(self, plate_number, capacity):
-        super().__init__("motorcycle", plate_number, capacity)
+        super().__init__("drone", plate_number, capacity)
 
 
 class DeliveryFactory:
@@ -96,7 +96,7 @@ class DeliveryRequestHandler(BaseHTTPRequestHandler):
         if self.path == "/deliveries":
             data = HTTPDataHandler.handle_reader(self)
             response_data = self.delivery_service.add_vehicle(data)
-            HTTPDataHandler.handle_response(self, 200, response_data.__dict__)
+            HTTPDataHandler.handle_response(self, 201, response_data.__dict__)
         else:
             HTTPDataHandler.handle_response(
                 self, 404, {"message": "Ruta no encontrada"}

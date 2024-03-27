@@ -116,7 +116,7 @@ class PizzaHandler(BaseHTTPRequestHandler):
         if self.path == "/pizzas":
             data = HTTPDataHandler.handle_reader(self)
             response_data = self.controller.create_pizza(data)
-            HTTPDataHandler.handle_response(self, 200, response_data.__dict__)
+            HTTPDataHandler.handle_response(self, 201, response_data.__dict__)
         else:
             HTTPDataHandler.handle_response(self, 404, {"Error": "Ruta no existente"})
 

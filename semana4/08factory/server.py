@@ -47,7 +47,7 @@ class DeliveryRequestHandler(BaseHTTPRequestHandler):
             delivery_vehicle = delivery_factory.create_delivery_vehicle(vehicle_type)
 
             response_data = {"message": delivery_vehicle.deliver()}
-            self.send_response(200)
+            self.send_response(201)
             self.send_header("Content-type", "application/json")
             self.end_headers()
             self.wfile.write(json.dumps(response_data).encode("utf-8"))

@@ -58,7 +58,7 @@ class PizzaHandler(BaseHTTPRequestHandler):
 
             pizza = pizzeria.create_pizza(tamaño, masa, toppings)
 
-            self.send_response(200)
+            self.send_response(201)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
 

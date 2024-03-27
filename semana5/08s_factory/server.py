@@ -64,7 +64,7 @@ class DeliveryRequestHandler(BaseHTTPRequestHandler):
                 vehicle_type
             )
             response_data = {"message": delivery_vehicle.deliver()}
-            HTTPDataHandler.handle_response(self, 200, response_data)
+            HTTPDataHandler.handle_response(self, 201, response_data)
         else:
             HTTPDataHandler.handle_response(
                 self, 404, {"message": "Ruta no encontrada"}
