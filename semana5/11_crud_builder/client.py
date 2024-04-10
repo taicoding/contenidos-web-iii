@@ -26,7 +26,8 @@ edit_pizza = {
     "masa": "Gruesa",
     "toppings": ["Pepperoni", "Queso"]
 }
-response = requests.put(url, json=edit_pizza, headers=headers)
+print( "PUT /pizzas/1")
+response = requests.put(url+'/1', json=edit_pizza, headers=headers)
 print(response.json())
 
 # GET /pizzas

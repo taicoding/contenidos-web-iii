@@ -64,7 +64,8 @@ class PizzaService:
         return pizza
 
     def read_pizzas(self):
-        return {index: pizza.__dict__ for index, pizza in pizzas.items()}
+        print(pizzas)
+        return {int(index): pizza.__dict__ for index, pizza in pizzas.items()}
 
     def update_pizza(self, index, data):
         if index in pizzas:
