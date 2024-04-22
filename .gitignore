@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 semana6/13_sqlite/instituto.db
 .vscode/settings.json
+*.db
+*.sql
