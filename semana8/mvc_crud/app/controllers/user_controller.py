@@ -6,7 +6,8 @@ from views import user_view
 # Importamos el modelo de usuario
 from models.user_model import User
 
-# Un Blueprint es un objeto que agrupa rutas y vistas
+# Un Blueprint es un objeto que agrupa
+# rutas y vistas
 user_bp = Blueprint("user", __name__)
 
 
@@ -37,3 +38,34 @@ def registro():
         return redirect(url_for("user.usuarios"))
     # Llamamos a la vista de registro
     return user_view.registro()
+
+
+# Actualizar la información de un usuario por su id
+# primero recuperamos la información del usuario
+@user_bp.route("/users/<int:id>", methods=["GET"])
+def obtener_usuario(id):
+    # Obtenemos el usuario por su id
+    user = User.get_by_id(id)
+    if not user:
+        return "Usuario no encontrado", 404
+    return user_view.actualizar(user)
+
+
+# Actualizamos la información del usuario por su id
+# Ya estamos en la vista de actualizar
+# por lo que obtenemos los datos del formulario
+# y actualizamos la información del usuario
+@user_bp.route("/users/<int:id>", methods=["POST"])
+def actualizar(id):
+    user = User.get_by_id(id)
+    if not user:
+        return "Usuario no encontrado", 404
+    # Obtenemos los datos del formulario
+    first_name = request.form["first_name"]
+    last_name = request.form["last_name"]
+    # Actualizamos los datos del usuario
+    user.first_name = first_name
+    user.last_name = last_name
+    # Guardamos los cambios
+    user.update()
+    return redirect(url_for("user.usuarios"))

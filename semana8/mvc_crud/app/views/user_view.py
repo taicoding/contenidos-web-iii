@@ -13,3 +13,9 @@ def usuarios(users):
 # template `registro.html`
 def registro():
     return render_template("registro.html", title="Registro de usuarios")
+
+
+# La función `actualizar` recibe un usuario
+# y renderiza el template `actualizar.html`
+def actualizar(user):
+    return render_template("actualizar.html", title="Actualizar usuario", user=user)
