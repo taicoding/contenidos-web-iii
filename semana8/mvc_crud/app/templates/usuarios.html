@@ -14,7 +14,8 @@
                             <div class="buttons">
                                 <a href="{{ url_for('user.actualizar', id=user.id) }}" 
                                 class="button is-info">Editar</a>
-                                <a href="/" class="button is-danger">Eliminar</a>
+                                <a href="{{ url_for('user.eliminar', id=user.id) }}" 
+                                class="button is-danger">Eliminar</a>
                             </div>
                         </div>
                     </div>

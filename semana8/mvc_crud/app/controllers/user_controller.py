@@ -69,3 +69,12 @@ def actualizar(id):
     # Guardamos los cambios
     user.update()
     return redirect(url_for("user.usuarios"))
+
+
+@user_bp.route("/users/<int:id>/delete")
+def eliminar(id):
+    user = User.get_by_id(id)
+    if not user:
+        return "Usuario no encontrado", 404
+    user.delete()
+    return redirect(url_for("user.usuarios"))

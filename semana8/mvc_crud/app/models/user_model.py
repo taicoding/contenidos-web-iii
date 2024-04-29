@@ -34,3 +34,8 @@ class User(db.Model):
     # Actualiza un usuario en la base de datos
     def update(self):
         db.session.commit()
+
+    # Elimina un usuario de la base de datos
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
