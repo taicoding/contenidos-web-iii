@@ -3,7 +3,7 @@
 {% block content %}
 <h2 class="subtitle is-2">Actualizar Usuario</h2>
 
-<form method="post">
+<form method="post" action="/users/{{ user.id }}/update">
     <div class="field">
         <label for="first_name">Nombre:</label>
         <div class="control">

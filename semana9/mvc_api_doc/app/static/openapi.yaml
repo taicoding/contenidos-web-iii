@@ -1,0 +1,102 @@
+openapi: 3.0.1
+info:
+  title: Zoológico API
+  version: "1.0.0"
+paths:
+  /api/animals:
+    get:
+      summary: Obtiene la lista de todos los animales
+      responses:
+        200:
+          description: Lista de animales
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal'
+    post:
+      summary: Crea un nuevo animal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal'
+      responses:
+        201:
+          description: Animal creado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal'
+  /api/animals/{id}:
+    get:
+      summary: Obtiene un animal específico por su ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Detalles del animal
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal'
+        404:
+          description: Animal no encontrado
+    put:
+      summary: Actualiza un animal existente por su ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal'
+      responses:
+        200:
+          description: Animal actualizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal'
+        404:
+          description: Animal no encontrado
+    delete:
+      summary: Elimina un animal existente por su ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        204:
+          description: Animal eliminado
+        404:
+          description: Animal no encontrado
+components:
+  schemas:
+    Animal:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+        species:
+          type: string
+        age:
+          type: integer
+      required:
+        - name
+        - species
+        - age
