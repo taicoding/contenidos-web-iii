@@ -4,12 +4,6 @@
         "title": "Zoológico API",
         "version": "1.0.0"
     },
-    "tags": [
-        {
-            "name": "Animales",
-            "description": "Operaciones relacionadas con los animales en el zoológico"
-        }
-    ],
     "paths": {
         "/api/animals": {
             "get": {
