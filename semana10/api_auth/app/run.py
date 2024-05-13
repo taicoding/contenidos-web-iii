@@ -1,17 +1,14 @@
 from flask import Flask
-from flask_login import LoginManager
 from flask_jwt_extended import JWTManager
 from controllers.animal_controller import animal_bp
 from controllers.user_controller import user_bp
 from flask_swagger_ui import get_swaggerui_blueprint
 from database import db
-from models.user_model import User
 
 app = Flask(__name__)
 
 # Configuración de la clave secreta para JWT
 app.config["JWT_SECRET_KEY"] = "tu_clave_secreta_aqui"
-app.config["SECRET_KEY"] = "clave-secreta"
 # Configuración de la URL de la documentación OpenAPI
 # Ruta para servir Swagger UI
 SWAGGER_URL = "/api/docs"
@@ -24,18 +21,6 @@ swagger_ui_blueprint = get_swaggerui_blueprint(
     SWAGGER_URL, API_URL, config={"app_name": "Zoológico API"}
 )
 app.register_blueprint(swagger_ui_blueprint, url_prefix=SWAGGER_URL)
-
-# Configuración de Flask-Login
-login_manager = LoginManager()
-# Especifica la ruta de inicio de sesión
-login_manager.login_view = "user.login"
-login_manager.init_app(app)
-
-
-# Función para cargar un usuario basado en su ID
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
 
 
 # Configuración de la base de datos

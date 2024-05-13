@@ -26,11 +26,6 @@ class User(UserMixin, db.Model):
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
-    # Verifica si la contraseña ingresada es correcta
-    @staticmethod
-    def check_password(self, password):
-        return check_password_hash(self.password_hash, password)
-
     # Guarda un usuario en la base de datos
     def save(self):
         db.session.add(self)

@@ -110,4 +110,4 @@ def login():
 def logout():
     logout_user()
     flash("Sesión cerrada exitosamente", "success")
-    return redirect(url_for("user.list_users"))
+    return redirect(url_for("user.login"))

@@ -7,8 +7,6 @@ from functools import wraps
 # Crear un blueprint para el controlador de animales
 animal_bp = Blueprint("animal", __name__)
 
-from functools import wraps
-
 
 def jwt_required(fn):
     @wraps(fn)
