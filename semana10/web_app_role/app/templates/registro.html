@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="subtitle is-2">Registrar Usuario</h2>
+<form method="post">
+    <div class="field">
+        <label for="first_name">Nombre:</label>
+        <div class="control">
+            <input type="text" id="first_name" name="first_name" 
+            required class="input">
+        </div>
+    </div>
+    <div class="field">
+        <label for="last_name">Apellido:</label>
+        <div class="control">
+            <input type="text" id="last_name" name="last_name" 
+            required class="input">
+        </div>
+    </div>
+    <div class="field">
+        <label for="username">Nombre de Usuario:</label>
+        <div class="control">
+            <input type="text" id="username" name="username" 
+            required class="input">
+        </div>
+    </div>
+    <div class="field">
+        <label for="password">Contraseña:</label>
+        <div class="control">
+            <input type="password" id="password" name="password" 
+            required class="input">
+        </div>
+    </div>
+    <div class="field">
+        <label for="role">Rol:</label>
+        <div class="control">
+            <input type="text" id="role" name="role" 
+            required class="input">
+        </div>
+    </div>
+    <input type="submit" value="Registrar" class="button is-primary">
+</form>
+{% endblock %}
