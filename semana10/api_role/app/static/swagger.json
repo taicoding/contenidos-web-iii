@@ -260,11 +260,22 @@
                     },
                     "password": {
                         "type": "string"
+                    },
+                    "role": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "admin",
+                                "user"
+                            ]
+                        }
                     }
                 },
                 "required": [
                     "username",
-                    "password"
+                    "password",
+                    "role"
                 ]
             },
             "Login": {

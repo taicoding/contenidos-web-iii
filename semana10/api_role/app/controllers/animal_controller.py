@@ -1,28 +1,16 @@
 from flask import Blueprint, request, jsonify
 from models.animal_model import Animal
 from views.animal_view import render_animal_list, render_animal_detail
-from flask_jwt_extended import verify_jwt_in_request, get_jwt_identity
-from functools import wraps
+from utils.decorators import jwt_required, roles_required
 
 # Crear un blueprint para el controlador de animales
 animal_bp = Blueprint("animal", __name__)
 
 
-def jwt_required(fn):
-    @wraps(fn)
-    def wrapper(*args, **kwargs):
-        try:
-            verify_jwt_in_request()
-            return fn(*args, **kwargs)
-        except Exception as e:
-            return jsonify({"error": str(e)}), 401
-
-    return wrapper
-
-
 # Ruta para obtener la lista de animales
 @animal_bp.route("/animals", methods=["GET"])
 @jwt_required
+@roles_required(roles=["admin", "user"])
 def get_animals():
     animals = Animal.get_all()
     return jsonify(render_animal_list(animals))
@@ -31,6 +19,7 @@ def get_animals():
 # Ruta para obtener un animal específico por su ID
 @animal_bp.route("/animals/<int:id>", methods=["GET"])
 @jwt_required
+@roles_required(roles=["admin", "user"])
 def get_animal(id):
     animal = Animal.get_by_id(id)
     if animal:
@@ -41,6 +30,7 @@ def get_animal(id):
 # Ruta para crear un nuevo animal
 @animal_bp.route("/animals", methods=["POST"])
 @jwt_required
+@roles_required(roles=["admin"])
 def create_animal():
     data = request.json
     name = data.get("name")
@@ -61,6 +51,7 @@ def create_animal():
 # Ruta para actualizar un animal existente
 @animal_bp.route("/animals/<int:id>", methods=["PUT"])
 @jwt_required
+@roles_required(roles=["admin"])
 def update_animal(id):
     animal = Animal.get_by_id(id)
 
@@ -81,6 +72,7 @@ def update_animal(id):
 # Ruta para eliminar un animal existente
 @animal_bp.route("/animals/<int:id>", methods=["DELETE"])
 @jwt_required
+@roles_required(roles=["admin"])
 def delete_animal(id):
     animal = Animal.get_by_id(id)
 
