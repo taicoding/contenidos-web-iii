@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="subtitle is-2">Editar Animal</h2>
+<form method="post">
+    <div class="field">
+        <label for="name">Nombre:</label>
+        <div class="control">
+            <input type="text" id="name" name="name" required class="input" value="{{ animal.name }}">
+        </div>
+    </div>
+    <div class="field">
+        <label for="species">Especie:</label>
+        <div class="control">
+            <input type="text" id="species" name="species" required class="input" value="{{ animal.species }}">
+        </div>
+    </div>
+    <div class="field">
+        <label for="age">Edad:</label>
+        <div class="control">
+            <input type="number" id="age" name="age" required class="input" value="{{ animal.age }}">
+        </div>
+    </div>
+    <input type="submit" value="Guardar Cambios" class="button is-primary">
+</form>
+{% endblock %}
