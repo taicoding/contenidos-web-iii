@@ -3,6 +3,9 @@ from flask_login import login_required, current_user
 from models.animal_model import Animal
 from views import animal_view
 
+# Importamos el decorador de roles
+from utils.decorators import role_required
+
 animal_bp = Blueprint("animal", __name__)
 
 
@@ -15,6 +18,7 @@ def list_animals():
 
 @animal_bp.route("/animals/create", methods=["GET", "POST"])
 @login_required
+@role_required("admin")
 def create_animal():
     if request.method == "POST":
         if current_user.has_role("admin"):
@@ -32,6 +36,7 @@ def create_animal():
 
 @animal_bp.route("/animals/<int:id>/update", methods=["GET", "POST"])
 @login_required
+@role_required("admin")
 def update_animal(id):
     animal = Animal.get_by_id(id)
     if not animal:
@@ -51,6 +56,7 @@ def update_animal(id):
 
 @animal_bp.route("/animals/<int:id>/delete")
 @login_required
+@role_required("admin")
 def delete_animal(id):
     animal = Animal.get_by_id(id)
     if not animal:
