@@ -1,7 +1,8 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, jsonify, request
+
 from app.models.animal_model import Animal
-from app.views.animal_view import render_animal_list, render_animal_detail
 from app.utils.decorators import jwt_required, roles_required
+from app.views.animal_view import render_animal_detail, render_animal_list
 
 # Crear un blueprint para el controlador de animales
 animal_bp = Blueprint("animal", __name__)
