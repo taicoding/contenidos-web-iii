@@ -1,0 +1,7 @@
+flask
+flask-sqlalchemy
+Flask-Login
+Flask-JWT-Extended
+flask-swagger-ui
+pytest
+pytest-flask
