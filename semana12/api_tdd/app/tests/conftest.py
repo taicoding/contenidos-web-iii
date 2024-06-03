@@ -19,10 +19,20 @@ def test_client():
 
 
 @pytest.fixture(scope="module")
-def auth_headers():
+def admin_auth_headers():
     with app.app_context():
         access_token = create_access_token(
             identity={"username": "testuser", "roles": '["admin"]'}
+        )
+        headers = {"Authorization": f"Bearer {access_token}"}
+        return headers
+
+
+@pytest.fixture(scope="module")
+def user_auth_headers():
+    with app.app_context():
+        access_token = create_access_token(
+            identity={"username": "user", "roles": '["user"]'}
         )
         headers = {"Authorization": f"Bearer {access_token}"}
         return headers

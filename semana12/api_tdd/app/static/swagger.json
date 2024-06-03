@@ -261,7 +261,7 @@
                     "password": {
                         "type": "string"
                     },
-                    "role": {
+                    "roles": {
                         "type": "array",
                         "items": {
                             "type": "string",
@@ -275,7 +275,7 @@
                 "required": [
                     "username",
                     "password",
-                    "role"
+                    "roles"
                 ]
             },
             "Login": {
